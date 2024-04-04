@@ -1,4 +1,4 @@
-package com.github.kmpk;
+package com.github.kmpk.csvwriter;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;

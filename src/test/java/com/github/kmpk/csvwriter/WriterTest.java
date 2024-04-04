@@ -1,13 +1,13 @@
-package com.github.kmpk;
+package com.github.kmpk.csvwriter;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+import static com.github.kmpk.csvwriter.TestUtil.readFile;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class WriterTest {
@@ -71,9 +71,5 @@ class WriterTest {
         String expected = "";
 
         assertEquals(expected, readFile(testFile));
-    }
-
-    private String readFile(Path file) throws IOException {
-        return Files.readString(file, StandardCharsets.UTF_8);
     }
 }

@@ -1,4 +1,4 @@
-package com.github.kmpk;
+package com.github.kmpk.csvwriter;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,13 +9,14 @@ import java.util.Iterator;
 import java.util.Objects;
 
 /**
- * CsvWriter provides functionality to write Java objects to CSV files.
+ * {@code CsvWriter} provides functionality to write objects to CSV files.
  */
 public class CsvWriter {
     private final char delimiter;
     private final String newLine;
     private final boolean includeHeader;
     private final boolean ignoreNullElements;
+
     CsvWriter(char delimiter, String newLine, boolean includeHeader, boolean ignoreNullElements) {
         this.delimiter = delimiter;
         this.newLine = newLine;

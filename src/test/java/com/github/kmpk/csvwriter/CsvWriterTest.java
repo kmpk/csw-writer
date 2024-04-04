@@ -1,15 +1,15 @@
-package com.github.kmpk;
+package com.github.kmpk.csvwriter;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.github.kmpk.csvwriter.TestUtil.readFile;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CsvWriterTest {
@@ -116,7 +116,7 @@ class CsvWriterTest {
     void writeCollectionEscaping() throws IOException, IllegalAccessException {
         CsvWriter writer = new CsvWriter(',', "\r\n", true, false);
 
-        List<TestClass> objects = Arrays.asList(new TestClass("s1\r\n", 1), new  TestClass("a,b,c,d", 2), new TestClass("\"asd\"", 3));
+        List<TestClass> objects = Arrays.asList(new TestClass("s1\r\n", 1), new TestClass("a,b,c,d", 2), new TestClass("\"asd\"", 3));
 
         writer.writeToFile(objects, TestClass.class, testFile.toFile());
 
@@ -139,9 +139,5 @@ class CsvWriterTest {
             this.field1 = field1;
             this.field2 = field2;
         }
-    }
-
-    private String readFile(Path file) throws IOException {
-        return Files.readString(file, StandardCharsets.UTF_8);
     }
 }

@@ -1,4 +1,4 @@
-package com.github.kmpk;
+package com.github.kmpk.csvwriter;
 
 import org.junit.jupiter.api.Test;
 
